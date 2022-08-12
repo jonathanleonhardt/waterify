@@ -1,0 +1,7 @@
+{
+  "name": "waterify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
