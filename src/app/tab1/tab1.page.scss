@@ -8,11 +8,6 @@
   margin-bottom: 30px;
 }
 
-.divider {
-  border: 1px solid grey;
-  margin: 10% 10%;  
-}
-
 .history-list {
   margin-right: 5%;  
 }
@@ -30,3 +25,12 @@
   font-size: large;
 }
 
+.edit-goal-button {
+  display:flex;
+  margin: 10%;
+  border-bottom: 1px solid grey;
+}
+
+.input-new-goal, .save-goal-button {
+  margin-top: 15px;
+}

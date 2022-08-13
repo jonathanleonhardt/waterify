@@ -47,6 +47,11 @@ export class Tab1Page {
     );
   }
 
+  public getConsumtionPercentage(){
+    const percentage = `${(this.waterConsumed * 100 ) / this.waterGoal}`;
+    return parseInt( percentage, 10 );
+  }
+
   public addCupOfWater() {
     const newConsumptionHistory = {
       description: 'Delicioso copo de água',
