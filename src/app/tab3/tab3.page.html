@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Conteúdos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,6 +17,35 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-card *ngFor="let post of posts" >
+      <ion-card-header id="open-content-post">
+        <ion-card-subtitle>{{ post.title }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{ post.description }}
+      </ion-card-content>
+      <ion-modal #modal trigger="open-content-post" [swipeToClose]="true" [canDismiss]="canDismiss">
+        <ng-template>
+          <ion-header [translucent]="true">
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button (click)="modal.dismiss()">Voltar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-title>
+            {{ post.title }}
+          </ion-title>
+          <ion-content class="ion-padding">
+            {{ post.content }}
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-card>
+  </ion-list>
+  
 
   <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
 </ion-content>
