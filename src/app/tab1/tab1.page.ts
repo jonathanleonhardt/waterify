@@ -6,7 +6,69 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  private waterGoal = 0;
+  private waterConsumed = 0;
 
-  constructor() {}
+  private consumptionHistory = [
+    {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    },
+    {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    },
+    {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    },
+    {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    },
+    {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    },
+    {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    },
+    {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    }
+  ];
+
+  constructor() {
+    this.waterGoal = 4000;
+    this.consumptionHistory.forEach(
+      ( item ) => this.waterConsumed += item.quantity
+    );
+  }
+
+  public addCupOfWater() {
+    const newConsumptionHistory = {
+      description: 'Delicioso copo de água',
+      quantity: 200
+    };
+    this.consumptionHistory.push( newConsumptionHistory );
+    this.waterConsumed += 200;
+    if ( this.waterConsumed > this.waterGoal ) {
+      this.waterConsumed = this.waterGoal;
+    }
+  }
+
+  public removeConsumption( item ) {
+    const index = this.consumptionHistory.indexOf(item);
+    if(index > -1){
+      this.consumptionHistory.splice(index, 1);
+      this.waterConsumed -= item.quantity;
+    }
+  }
+
+  public saveNewGoal( newGoal ) {
+      this.waterGoal = newGoal != null ? newGoal : 2000;
+  }
 
 }

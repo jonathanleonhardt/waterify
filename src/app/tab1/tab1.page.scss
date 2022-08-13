@@ -1,0 +1,32 @@
+.delete-buttom {
+  color: rgb(207, 85, 85)
+}
+
+.center {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.divider {
+  border: 1px solid grey;
+  margin: 10% 10%;  
+}
+
+.history-list {
+  margin-right: 5%;  
+}
+
+.consuming-status {
+  top: 31%;
+  left: 38%;
+  position: absolute;
+  font-size: small
+}
+.consuming-status-percentage {
+  top: 28%;
+  left: 43%;
+  position: absolute;
+  font-size: large;
+}
+
