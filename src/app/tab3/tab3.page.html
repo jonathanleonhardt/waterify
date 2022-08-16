@@ -18,34 +18,41 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-card *ngFor="let post of posts" >
-      <ion-card-header id="open-content-post">
-        <ion-card-subtitle>{{ post.title }}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        {{ post.description }}
-      </ion-card-content>
-      <ion-modal #modal trigger="open-content-post" [swipeToClose]="true" [canDismiss]="canDismiss">
+  <ion-list class="history-list">
+    <ion-item class="card" *ngFor="let post of posts" >
+      <ion-label  (click)="setOpen(true, post)" >
+        <h2>{{ post.title }}</h2>
+        <p class="content-card-description">{{ post.description }}</p>
+      </ion-label>
+      <ion-modal #modal [isOpen]="isModalOpen" [swipeToClose]="true" [canDismiss]="canDismiss">
         <ng-template>
-          <ion-header [translucent]="true">
+          <ion-header>
             <ion-toolbar>
-              <ion-buttons slot="end">
-                <ion-button (click)="modal.dismiss()">Voltar</ion-button>
+              <ion-title>Conteúdos</ion-title>
+              <ion-buttons slot="start">
+                <ion-button (click)="setOpen(false, post)">Voltar</ion-button>
               </ion-buttons>
             </ion-toolbar>
           </ion-header>
-          <ion-title>
-            {{ post.title }}
-          </ion-title>
           <ion-content class="ion-padding">
-            {{ post.content }}
+            <h2>{{ post.title }}</h2>
+            <ion-label>{{ post.description }}</ion-label>
+            <p position="stacked">{{ currentPost.content }}</p>
+            <p position="stacked">{{ currentPost.content }}</p>
+            <p position="stacked">{{ currentPost.content }}</p>
           </ion-content>
+          <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="likePost()">
+            <ion-fab-button *ngIf="!currentPost.liked">
+              <ion-icon name="heart-outline"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button *ngIf="currentPost.liked">
+              <ion-icon name="heart"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
         </ng-template>
       </ion-modal>
-    </ion-card>
+    </ion-item>
   </ion-list>
-  
 
   <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
 </ion-content>

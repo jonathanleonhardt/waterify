@@ -7,24 +7,48 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  public posts = [
+  isModalOpen = false;
+  currentPost: Post | null = null;
+
+
+  private posts: Post[] = [
     {
-      title: 'Lorem Ipsum Dolor',
-      description: 'Neque porro quisquam est qui dolorem',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis est vel enim venenatis ultricies.'
+      title: 'Post 1',
+      description: 'Delicioso copo de água',
+      content:'aaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      liked: false
     },
     {
-      title: 'Neque porro quisquam',
-      description: 'Etiam sagittis est vel enim venenatis ultricies',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis est vel enim venenatis ultricies.'
+      title: 'Post 2',
+      description: 'Delicioso copo de água',
+      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      liked: false
     },
     {
-      title: 'Fusce tincidunt euismod ex?',
-      description: 'Neque porro quisquam est qui dolorem',
-      content: 'Aenean non purus nunc. Morbi eu quam odio. Pellentesque tincidunt ornare nisl, quis volutpat nisi efficitur in. Integer.'
+      title: 'Post 3',
+      description: 'Delicioso copo de água',
+      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      liked: false
     }
   ];
 
   constructor() {}
 
+  setOpen(isOpen, post) {
+    this.isModalOpen = isOpen;
+    if (isOpen) {
+      this.currentPost = post;
+    }
+  }
+
+  likePost() {
+    this.currentPost.liked = !this.currentPost.liked;
+  }
+}
+
+interface Post {
+  title: string;
+  description: string;
+  content: string;
+  liked: boolean;
 }

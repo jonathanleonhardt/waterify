@@ -19,6 +19,36 @@
   </ion-header>
 
 
+
+  <ion-list class="history-list">
+    <ion-item class="card" *ngFor="let alarm of notifications" >
+      <ion-label  (click)="setOpen(true, alarm)" >
+        <h2>{{ alarm }}</h2>
+      </ion-label>
+      <ion-modal #modal [isOpen]="isModalOpen" [swipeToClose]="true" [canDismiss]="canDismiss">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Notificação</ion-title>
+              <ion-buttons slot="start">
+                <ion-button (click)="setOpen(false, alarm)">Voltar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-content class="ion-padding">
+              <h2>{{ currentAlarm }}</h2>
+              <ion-label>{{ currentAlarm }}</ion-label>
+              <p position="stacked">{{ currentAlarm }}</p>
+            <ion-button expand="block" (click)="saveAlarm()" (click)="modal.dismiss()">Salvar</ion-button>
+            </ion-content>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    
+    </ion-item>
+  </ion-list>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="time-outline"></ion-icon>
