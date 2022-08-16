@@ -18,7 +18,6 @@
     </ion-toolbar>
   </ion-header>
 
-
   <ion-list class="history-list">
     <ion-item class="content-card" *ngFor="let post of posts" >
       <ion-label  (click)="setOpen(true, post)" >
@@ -42,12 +41,18 @@
             <p position="stacked">{{ currentPost.content }}</p>
             <p position="stacked">{{ currentPost.content }}</p>
           </ion-content>
+          <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="likePost()">
+            <ion-fab-button *ngIf="!currentPost.liked">
+              <ion-icon name="heart-outline"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button *ngIf="currentPost.liked">
+              <ion-icon name="heart"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
         </ng-template>
       </ion-modal>
-    
     </ion-item>
   </ion-list>
-
 
   <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
 </ion-content>

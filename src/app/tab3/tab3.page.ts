@@ -6,25 +6,29 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+
   isModalOpen = false;
-  currentPost = {};
+  currentPost:Post | null = null;
 
 
-  private posts = [
+  private posts: Post[] = [
     {
       title: 'Post 1',
       description: 'Delicioso copo de água',
-      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa'
+      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      liked: false
     },
     {
       title: 'Post 2',
       description: 'Delicioso copo de água',
-      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa'
+      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      liked: false
     },
     {
       title: 'Post 3',
       description: 'Delicioso copo de água',
-      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa'
+      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      liked: false
     }
   ];
 
@@ -36,4 +40,15 @@ export class Tab3Page {
       this.currentPost = post;
     }
   }
+
+  likePost() {
+    this.currentPost.liked = !this.currentPost.liked;
+  }
+}
+
+interface Post {
+  title: string;
+  description: string;
+  content: string;
+  liked: boolean;
 }
