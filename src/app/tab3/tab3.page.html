@@ -19,7 +19,7 @@
   </ion-header>
 
   <ion-list class="history-list">
-    <ion-item class="content-card" *ngFor="let post of posts" >
+    <ion-item class="card" *ngFor="let post of posts" >
       <ion-label  (click)="setOpen(true, post)" >
         <h2>{{ post.title }}</h2>
         <p class="content-card-description">{{ post.description }}</p>
