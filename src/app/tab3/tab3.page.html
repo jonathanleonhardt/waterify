@@ -18,5 +18,36 @@
     </ion-toolbar>
   </ion-header>
 
+
+  <ion-list class="history-list">
+    <ion-item class="content-card" *ngFor="let post of posts" >
+      <ion-label  (click)="setOpen(true, post)" >
+        <h2>{{ post.title }}</h2>
+        <p class="content-card-description">{{ post.description }}</p>
+      </ion-label>
+      <ion-modal #modal [isOpen]="isModalOpen" [swipeToClose]="true" [canDismiss]="canDismiss">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Conteúdos</ion-title>
+              <ion-buttons slot="start">
+                <ion-button (click)="setOpen(false, post)">Voltar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <h2>{{ post.title }}</h2>
+            <ion-label>{{ post.description }}</ion-label>
+            <p position="stacked">{{ currentPost.content }}</p>
+            <p position="stacked">{{ currentPost.content }}</p>
+            <p position="stacked">{{ currentPost.content }}</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    
+    </ion-item>
+  </ion-list>
+
+
   <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
 </ion-content>
