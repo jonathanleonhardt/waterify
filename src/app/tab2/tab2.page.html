@@ -23,8 +23,10 @@
   <ion-list class="history-list">
     <ion-item class="card" *ngFor="let alarm of notifications" >
       <ion-label  (click)="setOpen(true, alarm)" >
-        <h2>{{ alarm }}</h2>
+        <h3>{{ alarm.daysWeek }}</h3>
+        <p>a cada {{ getEveryTimeFormatted( alarm.every ) }} | {{ alarm.beginsAt }} - {{ alarm.endsAt }}</p>
       </ion-label>
+      <ion-toggle></ion-toggle>
       <ion-modal #modal [isOpen]="isModalOpen" [swipeToClose]="true" [canDismiss]="canDismiss">
         <ng-template>
           <ion-header>

@@ -14,14 +14,14 @@ export class Tab2Page {
       every: 60,
       beginsAt: '06:30',
       endsAt: '22:30',
-      daysWeek: ['MON','THU','SAT'],
-      active: true
+      daysWeek: ['SEG','QUA','SEX'],
+      active: false
     },
     {
       every: 120,
       beginsAt: '10:00',
       endsAt: '18:00',
-      daysWeek: ['SUN'],
+      daysWeek: ['SAB','DOM'],
       active: true
     }
   ];
@@ -35,12 +35,20 @@ export class Tab2Page {
     }
   }
 
+  public getEveryTimeFormatted( every: number ): string {
+    if ( every % 60 === 0) {
+      return every / 60 + ' horas';
+    } else {
+      return every + ' minutos';
+    }
+  }
+
 }
 
 interface NotificationConfig {
   every: number;
   beginsAt: string;
   endsAt: string;
-  daysWeek: string[],
-  active: boolean
+  daysWeek: string[];
+  active: boolean;
 }
