@@ -9,6 +9,8 @@ export class Tab2Page {
   isModalOpen = false;
   currentAlarm: NotificationConfig | null = null;
 
+  daysOfTheWeek = ['D','S','T','Q','Q','S','S'];
+
   private notifications: NotificationConfig[] = [
     {
       every: 60,
@@ -41,6 +43,10 @@ export class Tab2Page {
     } else {
       return every + ' minutos';
     }
+  }
+
+  public teste() {
+    console.log('teste');
   }
 
 }
