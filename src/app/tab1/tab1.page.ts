@@ -53,14 +53,15 @@ export class Tab1Page {
   }
 
   public addCupOfWater() {
-    const newConsumptionHistory = {
-      description: 'Delicioso copo de água',
-      quantity: 200
-    };
-    this.consumptionHistory.push( newConsumptionHistory );
     this.waterConsumed += 200;
     if ( this.waterConsumed > this.waterGoal ) {
       this.waterConsumed = this.waterGoal;
+    } else {
+      const newConsumptionHistory = {
+        description: 'Delicioso copo de água',
+        quantity: 200
+      };
+      this.consumptionHistory.push( newConsumptionHistory );
     }
   }
 
