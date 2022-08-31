@@ -36,3 +36,10 @@ input[type="checkbox"]:checked + label {
   color: white;
   background-color: black;
 }
+
+.toggle {
+  height: 20px;
+  width: 30px;
+  --handle-height: 16px;
+  --handle-width: 16px;
+}

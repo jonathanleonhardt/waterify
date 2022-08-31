@@ -37,6 +37,10 @@ export class Tab2Page {
     }
   }
 
+  setCurrentAlarmStatus(alarm) {
+    alarm.active = !alarm.active;
+  }
+
   public getEveryTimeFormatted( every: number ): string {
     if ( every % 60 === 0) {
       return every / 60 + ' horas';
@@ -45,8 +49,11 @@ export class Tab2Page {
     }
   }
 
-  public teste() {
-    console.log('teste');
+  public saveAlarm() {
+    if ( this.currentAlarm === undefined || this.currentAlarm === null ) {
+      //this.currentAlarm
+    }
+    this.notifications = [ ...this.notifications , this.currentAlarm ];
   }
 
 }
