@@ -13,21 +13,21 @@ export class Tab3Page {
 
   private posts: Post[] = [
     {
-      title: 'Post 1',
-      description: 'Delicioso copo de água',
-      content:'aaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      title: 'Lorem ipsum dolor sit amet',
+      description: 'Integer a magna sed mi luctus venenatis quis vitae dui.',
+      content:' Maecenas convallis mollis nulla, nec lobortis sapien fermentum at.',
       liked: false
     },
     {
-      title: 'Post 2',
+      title: 'Lorem ipsum dolor sit amet',
       description: 'Delicioso copo de água',
-      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      content:'Nulla convallis aliquam augue, vel lacinia ligula tincidunt tincidunt. Cras iaculis pulvinar tempus.',
       liked: false
     },
     {
-      title: 'Post 3',
-      description: 'Delicioso copo de água',
-      content:'aaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaaaaaaa aaaaa  aaaaa',
+      title: 'Lorem ipsum dolor sit amet',
+      description: 'Curabitur euismod interdum varius',
+      content:'Phasellus fringilla metus mauris, non blandit justo tempus eget. Nulla non ex a lacus ornare fringilla sit amet vel risus.',
       liked: false
     }
   ];
