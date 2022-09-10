@@ -9,18 +9,19 @@
 }
 
 .history-list {
-  margin-right: 5%;  
+  margin-right: 2%; 
+  margin-left: 2%; 
 }
 
 .consuming-status {
-  top: 31%;
-  left: 38%;
+  top: 19.5%;
+  left: 39%;
   position: absolute;
   font-size: small
 }
 .consuming-status-percentage {
-  top: 28%;
-  left: 43%;
+  top: 16.5%;
+  left: 45%;
   position: absolute;
   font-size: large;
 }
@@ -33,4 +34,8 @@
 
 .input-new-goal, .save-goal-button {
   margin-top: 15px;
+}
+
+ion-icon {
+  font-size: 30px;
 }
